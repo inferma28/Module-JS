@@ -1,45 +1,293 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <title>Module</title>
 </head>
 <body>
-
-    <div class="container">
-            <header class="header">
-                <img src="img/items/logo.png" alt="logo" class="logo">
-                <img src="img/icons/cart.svg" alt="cart" class="cart">
-            </header>
-        </div>
-
-    <main>
-        <div class="main-top">
-            <div class="container">
-                <div class="carusel">
-                    <img src="img/banners/ipad_air_banner.jpg" alt="ipad" class="carusel__img">
-                    <div class="carusel__wraper">
-                        <h1 class="carusel__title">IPad Air</h1>
-                        <button href="#" class="btn">Add to cart</button>
-                    </div>
-                </div>
-                <div class="form-search">
-                    <input type="text" class="input__text" maxlength="128">                   
+  <div class="container">
+    <header class="header">
+        <img src="img/items/logo.png" alt="logo" class="logo">
+        <img src="img/icons/cart.svg" alt="cart" class="cart">
+    </header>
+</div>
+<main>
+    <div class="main-top">
+        <div class="container">
+            <div class="carusel">
+                <img src="img/banners/ipad_air_banner.jpg" alt="ipad" class="carusel__img">
+                <div class="carusel__wraper">
+                    <h1 class="carusel__title">IPad Air</h1>
+                    <button href="#" class="btn">Add to cart</button>
                 </div>
             </div>
+            <div class="class=" checkbox_label" form-search">
+                <input type="text" class="input__text" maxlength="128">
+            </div>
         </div>
-
-        <div class="main">
-            <div class="container">
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="grid_container">
+                <div class="ad">
+                    <div class="filter">
+                        <div class="filter-card">
+                            <div class="filter-title">
+                                <div class="filter-text">Price</div>
+                                <svg class='filter-icon' width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1846_1483)">
+                                        <path
+                                            d="M6.29805 5.9624L10.0722 8.7487L13.8463 5.9624L15.0056 6.82019L10.0722 10.4704L5.13869 6.82019L6.29805 5.9624Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1846_1483">
+                                            <path
+                                                d="M14.9392 0.736572C17.7006 0.736572 19.9392 2.97515 19.9392 5.73657V10.3373C19.9392 13.0987 17.7006 15.3373 14.9392 15.3373L0.205355 15.3373V0.736572L14.9392 0.736572Z"
+                                                fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="expander">
+                                <span>From</span><input type='text' class="input">
+                                <span>To</span><input type='text' class="input">
+                            </div>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-title">
+                                <div class="filter-text">Color</div>
+                                <svg class='filter-icon' width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1846_1483)">
+                                        <path
+                                            d="M6.29805 5.9624L10.0722 8.7487L13.8463 5.9624L15.0056 6.82019L10.0722 10.4704L5.13869 6.82019L6.29805 5.9624Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1846_1483">
+                                            <path
+                                                d="M14.9392 0.736572C17.7006 0.736572 19.9392 2.97515 19.9392 5.73657V10.3373C19.9392 13.0987 17.7006 15.3373 14.9392 15.3373L0.205355 15.3373V0.736572L14.9392 0.736572Z"
+                                                fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="expander expander_checkbox ">
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="red">
+                                    <label class="checkbox_label" for="red">Red</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="black">
+                                    <label class="checkbox_label" for="black">Black</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="blue">
+                                    <label class="checkbox_label" for="blue">Blue</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="gold">
+                                    <label class="checkbox_label" for="gold">Gold</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="green">
+                                    <label class="checkbox_label" for="green">Green</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="white">
+                                    <label class="checkbox_label" for="white">White</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="grey">
+                                    <label class="checkbox_label" for="grey">Grey</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="yellow">
+                                    <label class="checkbox_label" for="yellow">Yellow</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-title">
+                                <div class="filter-text">Memory</div>
+                                <svg class='filter-icon' width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1846_1483)">
+                                        <path
+                                            d="M6.29805 5.9624L10.0722 8.7487L13.8463 5.9624L15.0056 6.82019L10.0722 10.4704L5.13869 6.82019L6.29805 5.9624Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1846_1483">
+                                            <path
+                                                d="M14.9392 0.736572C17.7006 0.736572 19.9392 2.97515 19.9392 5.73657V10.3373C19.9392 13.0987 17.7006 15.3373 14.9392 15.3373L0.205355 15.3373V0.736572L14.9392 0.736572Z"
+                                                fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="expander expander_checkbox ">
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="32Gb">
+                                    <label class="checkbox_label" for="32Gb">32 Gb</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="512Gb">
+                                    <label class="checkbox_label" for="512Gb">512 Gb</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="64Gb">
+                                    <label class="checkbox_label" for="64Gb">64 Gb</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="1TB">
+                                    <label class="checkbox_label" for="1TB">1 TB</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="128Gb">
+                                    <label class="checkbox_label" for="128Gb">128 Gb</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="2TB">
+                                    <label class="checkbox_label" for="2TB">2 TB</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="256GB">
+                                    <label class="checkbox_label" for="256GB">256 GB</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="4TB">
+                                    <label class="checkbox_label" for="4TB">4 TB</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-title">
+                                <div class="filter-text">OS</div>
+                                <svg class='filter-icon' width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1846_1483)">
+                                        <path
+                                            d="M6.29805 5.9624L10.0722 8.7487L13.8463 5.9624L15.0056 6.82019L10.0722 10.4704L5.13869 6.82019L6.29805 5.9624Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1846_1483">
+                                            <path
+                                                d="M14.9392 0.736572C17.7006 0.736572 19.9392 2.97515 19.9392 5.73657V10.3373C19.9392 13.0987 17.7006 15.3373 14.9392 15.3373L0.205355 15.3373V0.736572L14.9392 0.736572Z"
+                                                fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="expander expander_checkbox ">
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="IOS">
+                                    <label class="checkbox_label" for="IOS">IOS</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="MacOS">
+                                    <label class="checkbox_label" for="MacOS">Mac OS</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="tvOS">
+                                    <label class="checkbox_label" for="tvOS">tvOS</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="WatchOS">
+                                    <label class="checkbox_label" for="WatchOS">Watch OS</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-card">
+                            <div class="filter-title">
+                                <div class="filter-text">Display</div>
+                                <svg class='filter-icon' width="20" height="16" viewBox="0 0 20 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1846_1483)">
+                                        <path
+                                            d="M6.29805 5.9624L10.0722 8.7487L13.8463 5.9624L15.0056 6.82019L10.0722 10.4704L5.13869 6.82019L6.29805 5.9624Z"
+                                            fill="black" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1846_1483">
+                                            <path
+                                                d="M14.9392 0.736572C17.7006 0.736572 19.9392 2.97515 19.9392 5.73657V10.3373C19.9392 13.0987 17.7006 15.3373 14.9392 15.3373L0.205355 15.3373V0.736572L14.9392 0.736572Z"
+                                                fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div class="expander expander_checkbox ">
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="2-5inch">
+                                    <label class="checkbox_label" for="2-5inch">2 - 5 inch</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="5-7inch">
+                                    <label class="checkbox_label" for="5-7inch">5 - 7 inch</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="7-12inch">
+                                    <label class="checkbox_label" for="7-12inch">7 - 12 inch</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="12-16inch">
+                                    <label class="checkbox_label" for="12-16inch">12 - 16 inch</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type='checkbox' class="input_checkbox" id="16inch">
+                                    <label class="checkbox_label" for="16inch">+16 inch</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-main"></div>
             </div>
         </div>
-    </main>
-
+    </div>
+    <div class="backgroundModal">
+        <div class="modal">
+            <div class="modal__img">
+                <img class="modal__img-picture">
+            </div>
+            <div class="modal__info">
+                <div class="product_name modal__name"></div>
+                <div class="reviews reviews__modal">
+                    <img class="reviews__like" src="img/icons/like_filled.svg">
+                    <div class="reviews_holder">
+                        <div class="reviews__grade">% Positive reviews<span class="positive"></span></div>
+                        <div class="reviews__grade">Above avarage</div>
+                    </div>
+                    <div class="order">
+                        <div class="order__sum"><span>orders</span></div>
+                        <div class="reviews__sum"></div>
+                    </div>
+                </div>
+                <ul class="modal__list">
+                    <li class="modal__item">Color: <span id="color"></span></li>
+                    <li class="modal__item">Operating System: <span id="operating"></span></li>
+                    <li class="modal__item">Chip: <span id="chip"></span></li>
+                    <li class="modal__item">Height: <span id="height"></span></li>
+                    <li class="modal__item">Width: <span id="width"></span></li>
+                    <li class="modal__item">Depth: <span id="depth"></span></li>
+                    <li class="modal__item">Weight: <span id="weight"></span></li>
+                </ul>
+            </div>
+            <div class="modal__to-buy">
+                <div class="modal__price"></div>
+                <div class="module__left">Stock: <span id="left"></span> pcs.</div>
+                <button class="btn">Add to cart</button>
+            </div>
+        </div>
+    </div>
+  </main>
     <script src="js/items.js"></script>
     <script src="js/script.js"></script>
 </body>

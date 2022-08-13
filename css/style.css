@@ -186,14 +186,11 @@
     color: #3B3E66; 
     margin-bottom: 8px;
     display: flex;
+    justify-content: flex-end;
     flex-direction: row-reverse;
 }
 .reviews__grade span {
     font-weight: 700;
-}
-
-.reviews__bottom {
-    display: inline;
 }
 
 .order {
@@ -202,3 +199,236 @@
     line-height: 16px;
     color: #3B3E66;
 } 
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 50px;
+}
+
+
+.filter {
+    overflow: hidden;
+    border: 2px solid #DDDADA;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+.filter-card {
+    padding: 0 25px;
+    background: #EDF3FF;
+}
+
+.filter-card-active {
+    background: #fff;
+}
+
+.filter-title {
+
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    border-bottom: 0.5px solid #DDDDDD;
+    border-top: 0.5px solid #DDDDDD;
+}
+
+.filter-text {
+    margin: 15px 0;
+}
+
+.expander {
+    display: none;
+    grid-template-columns: 1fr 200px;
+    gap: 15px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 38px;
+    color: #000000;
+}
+
+.active {
+    display: grid;
+    margin: 23px 0;
+}
+
+.filter-icon {
+    transition: all 0.4s;
+    margin: 10px 0;
+}
+
+.filter-icon-active {
+    transform: rotate(180deg);
+}
+
+.input {
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    width: 190px;
+    height: 40px;
+    text-align: center;
+}
+
+.expander_checkbox {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 40px;
+}
+
+.checkbox {
+    position: relative;
+    line-height: 1.8rem;
+}
+
+.input_checkbox {
+    appearance: none;
+    position: absolute;
+}
+
+.checkbox_label {
+    margin-left: 25px;
+}
+
+.checkbox_label::before {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #C4C4C4;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    z-index: 1;
+}
+
+.checkbox_label::after {
+    content: '';
+    display: block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 7px;
+    left: 2px;
+    z-index: 2;
+    background: url('../img/icons/Check_mark_9x9.svg.png') no-repeat;
+    background-size: 15px 15px;
+    opacity: 0;
+}
+
+.input_checkbox:checked+.checkbox_label::before {
+    background-color: #fff;
+    border: 1px solid #C4C4C4;
+}
+
+.input_checkbox:checked+.checkbox_label::after {
+    opacity: 1;
+}
+
+.backgroundModal {
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.7s;
+}
+
+.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 290px 2fr 290px;
+    width: 1024px;
+    height: 490px;
+    background: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
+
+.modal__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__img img {
+    width: 250px;
+
+}
+
+.modal__info {
+    border-left: 1px solid #E2E2E2;
+    border-right: 1px solid #E2E2E2;
+    padding: 40px 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.modal__name {
+    margin-bottom: 20px;
+}
+
+.reviews__modal {
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.modal__list {
+    list-style-type: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #767272;
+}
+
+.modal__item {
+    margin-bottom: 15px;
+}
+
+.modal__item span {
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+}
+
+.modal__to-buy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__price {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    color: #3B3E66;
+    margin-bottom: 23px;
+}
+
+.module__left {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #3B3E66;
+    margin-bottom: 30px;
+}
+
+#left {
+    font-weight: 700;
+}
