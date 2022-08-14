@@ -1,3 +1,7 @@
+function create(name) {
+    return document.createElement(name)
+}
+
 const colMain = document.querySelector('.col_main');
 const main = document.querySelector('.main');
 
@@ -38,6 +42,7 @@ function createProduct(id, imgUrl, Name, inStock, price, reviews) {
     productprice.className = "price";
     productprice.innerText = `Price:${price} $`
 
+   
     const btn = create('button');
     btn.className = 'btn';
     btn.innerText = 'Add to cart';
@@ -97,26 +102,28 @@ for (const el of items) {
 const filterTitle = document.getElementsByClassName('filter_title')
 
 Array.from(filterTitle, el => el.addEventListener('click', function () {
-    console.log(el)
     this.querySelector('.filter_icon').classList.toggle('filter_icon_active')
     this.nextElementSibling.classList.toggle('active')
     this.parentNode.classList.toggle('filter_card_active')
 }))
 
-const backgroundModal = document.querySelector('.backgroundModal')
-const item = document.getElementsByClassName('items')
-Array.from(item, el => el.addEventListener('click', function () {
-    const id = this.getAttribute('item_id');
-    for (const i of items) {
-        if (i.id == id) {
-            createModal(i.imgUrl, i.name, i.orderInfo.reviews, i.color, i.os, i.size.height, i.size.weight, i.size.depth, i.size.weight, i.chip.name, i.orderInfo.inStock, i.price)
+document.querySelector('.col_main').addEventListener('click', event => {
+    let id
+    if (event.target.className === 'items' || event.target.className === 'product_img') {
+        id = event.target.getAttribute('item_id')
+        if (id === null) {
+            id = event.target.parentNode.getAttribute('item_id')
         }
+        for (const i of items) {
+            if (i.id == id) {
+                createModal(i.imgUrl, i.name, i.orderInfo.reviews, i.color, i.os, i.size.height, i.size.weight, i.size.depth, i.size.weight, i.chip.name, i.orderInfo.inStock, i.price)
+            }
+        }
+        document.querySelector('.backgroundModal').classList.add('open')
     }
-    console.log(backgroundModal)
-    backgroundModal.classList.add('open')
-}))
-backgroundModal.addEventListener('click', function () {
-    backgroundModal.classList.remove('open')
+})
+document.querySelector('.backgroundModal').addEventListener('click', el => {
+    el.target.classList.remove('open')
 })
 
 function createModal(imgUrl, name, reviews, color, operating, height, width, depth, weight, chip, left, price) {
@@ -136,8 +143,5 @@ function createModal(imgUrl, name, reviews, color, operating, height, width, dep
     document.getElementById('left').innerText = left
     const modalPrice = document.getElementsByClassName('modal__price')
     modalPrice[0].innerText = `$ ${price}`
-}
-
-function create(name) {
-    return document.createElement(name)
+    
 }
