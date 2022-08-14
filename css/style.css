@@ -72,20 +72,57 @@
     cursor: auto;
 }
 
+.form_search {
+    position: relative;
+}
+
+.search_content {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.search_active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search_item {
+    list-style: none;
+    padding: 10px 0 10px 0;
+    padding-left: 60px;
+}
+
+.search_item:hover {
+    background-color: rgba(221, 221, 221, 0.2);
+}
+
 .input__text {
     width: 100%;
     height: 60px;
-    background: #FFFFFF;
+    background: #FFFFFF url(../img/icons/search.svg) left no-repeat;
+    background-size: 20px 20px;
+    background-position: 25px;
     border: 1px solid #DDDADA;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     margin-bottom: 40px;
+    padding-left: 65px;
 }
 
 .col_main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    min-height: 100vh;
 }
 
 .items {
@@ -189,6 +226,7 @@
     justify-content: flex-end;
     flex-direction: row-reverse;
 }
+
 .reviews__grade span {
     font-weight: 700;
 }
@@ -205,7 +243,6 @@
     grid-template-columns: 320px 1fr;
     gap: 50px;
 }
-
 
 .filter {
     overflow: hidden;
@@ -224,7 +261,6 @@
 }
 
 .filter_title {
-
     display: flex;
     justify-content: space-between;
     font-weight: 400;
@@ -233,6 +269,7 @@
     color: #000000;
     border-bottom: 0.5px solid #DDDDDD;
     border-top: 0.5px solid #DDDDDD;
+    cursor: pointer;
 }
 
 .filter_text {
@@ -311,7 +348,7 @@
     height: 15px;
     position: absolute;
     top: 7px;
-    left: 2px;
+    left: 3px;
     z-index: 2;
     background: url('../img/icons/Check_mark_9x9.svg.png') no-repeat;
     background-size: 15px 15px;
