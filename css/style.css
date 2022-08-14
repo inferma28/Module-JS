@@ -82,7 +82,7 @@
     margin-bottom: 40px;
 }
 
-.col-main {
+.col_main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -214,16 +214,16 @@
     border-radius: 5px;
 }
 
-.filter-card {
+.filter_card {
     padding: 0 25px;
     background: #EDF3FF;
 }
 
-.filter-card-active {
+.filter_card_active {
     background: #fff;
 }
 
-.filter-title {
+.filter_title {
 
     display: flex;
     justify-content: space-between;
@@ -235,7 +235,7 @@
     border-top: 0.5px solid #DDDDDD;
 }
 
-.filter-text {
+.filter_text {
     margin: 15px 0;
 }
 
@@ -254,13 +254,14 @@
     margin: 23px 0;
 }
 
-.filter-icon {
+.filter_icon {
     transition: all 0.4s;
     margin: 10px 0;
+    transform: rotate(270deg);
 }
 
-.filter-icon-active {
-    transform: rotate(180deg);
+.filter_icon_active {
+    transform: rotate(360deg);
 }
 
 .input {

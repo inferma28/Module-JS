@@ -1,10 +1,10 @@
-const colMain = document.querySelector('.col-main');
+const colMain = document.querySelector('.col_main');
 const main = document.querySelector('.main');
 
 function createProduct(id, imgUrl, Name, inStock, price, reviews) {
     const item = create('div');
     item.className = 'items';
-    item.setAttribute('item-id', id);
+    item.setAttribute('item_id', id);
 
     const like = create('img');
     like.className = 'like';
@@ -94,19 +94,19 @@ for (const el of items) {
     createProduct(el.id, el.imgUrl, el.name, el.orderInfo.inStock, el.price, el.orderInfo.reviews)
 }
 
-const filterTitle = document.getElementsByClassName('filter-title')
+const filterTitle = document.getElementsByClassName('filter_title')
 
 Array.from(filterTitle, el => el.addEventListener('click', function () {
     console.log(el)
-    this.querySelector('.filter-icon').classList.toggle('filter-icon-active')
+    this.querySelector('.filter_icon').classList.toggle('filter_icon_active')
     this.nextElementSibling.classList.toggle('active')
-    this.parentNode.classList.toggle('filter-card-active')
+    this.parentNode.classList.toggle('filter_card_active')
 }))
 
 const backgroundModal = document.querySelector('.backgroundModal')
 const item = document.getElementsByClassName('items')
 Array.from(item, el => el.addEventListener('click', function () {
-    const id = this.getAttribute('item-id');
+    const id = this.getAttribute('item_id');
     for (const i of items) {
         if (i.id == id) {
             createModal(i.imgUrl, i.name, i.orderInfo.reviews, i.color, i.os, i.size.height, i.size.weight, i.size.depth, i.size.weight, i.chip.name, i.orderInfo.inStock, i.price)
