@@ -42,7 +42,6 @@ function createProduct(id, imgUrl, Name, inStock, price, reviews) {
     productprice.className = "price";
     productprice.innerText = `Price:${price} $`
 
-   
     const btn = create('button');
     btn.className = 'btn';
     btn.innerText = 'Add to cart';
@@ -55,14 +54,14 @@ function createProduct(id, imgUrl, Name, inStock, price, reviews) {
 
     const reviewsLike = create('img');
     reviewsLike.className = 'reviews__like'
-    reviewsLike.src = 'img/icons/like_filled.svg';
+    reviewsLike.src = 'img/icons/like_filled_red.svg';
 
     const reviewsHolder = create('div');
     reviewsHolder.className = 'reviews_holder';
 
     const reviewsSum = create('div');
     reviewsSum.className = 'reviews__sum';
-    reviewsSum.innerText = ``
+    reviewsSum.innerText = ``;
 
     const span = create('span');
     span.innerText = reviews;
@@ -95,9 +94,45 @@ function createProduct(id, imgUrl, Name, inStock, price, reviews) {
     reviewsGrade.append(span);
 }
 
-for (const el of items) {   
-    createProduct(el.id, el.imgUrl, el.name, el.orderInfo.inStock, el.price, el.orderInfo.reviews)
-}
+const input = document.querySelector('.input__text');
+const searchContent = document.querySelector('.search_content')
+
+for (const el of items) {createProduct(el.id, el.imgUrl, el.name, el.orderInfo.inStock, el.price, el.orderInfo.reviews)}
+
+input.addEventListener('keyup', function () {
+    const item = document.querySelectorAll('.items')
+    searchContent.querySelectorAll('.search_item').forEach(e => e.remove());
+    item.forEach(e => e.remove());
+
+    for (const el of items) {
+        if (el.name.toLowerCase().startsWith(input.value.toLowerCase()) === true && input.value !== '') {
+            searchContent.classList.add('search_active')
+            let li = create('li')
+            li.className = 'search_item'
+            li.innerText = el.name
+            searchContent.append(li)
+            createProduct(el.id, el.imgUrl, el.name, el.orderInfo.inStock, el.price, el.orderInfo.reviews)
+        }
+        if (input.value == '') {
+            createProduct(el.id, el.imgUrl, el.name, el.orderInfo.inStock, el.price, el.orderInfo.reviews)
+            searchContent.classList.remove('search_active')
+        }
+    }
+})
+
+searchContent.addEventListener('click', event => {
+    input.value = event.target.innerText
+    searchContent.classList.remove('search_active')
+    document.querySelectorAll('.items').forEach(e => e.remove());
+    for (const el of items) {
+        if (el.name == input.value) {
+            createProduct(el.id, el.imgUrl, el.name, el.orderInfo.inStock, el.price, el.orderInfo.reviews)
+        }
+    }
+})
+document.body.addEventListener('click', () => {
+    searchContent.classList.remove('search_active')
+})
 
 const filterTitle = document.getElementsByClassName('filter_title')
 
@@ -122,6 +157,7 @@ document.querySelector('.col_main').addEventListener('click', event => {
         document.querySelector('.backgroundModal').classList.add('open')
     }
 })
+
 document.querySelector('.backgroundModal').addEventListener('click', el => {
     el.target.classList.remove('open')
 })
@@ -142,6 +178,5 @@ function createModal(imgUrl, name, reviews, color, operating, height, width, dep
     document.getElementById('chip').innerText = chip
     document.getElementById('left').innerText = left
     const modalPrice = document.getElementsByClassName('modal__price')
-    modalPrice[0].innerText = `$ ${price}`
-    
+    modalPrice[0].innerText = `$ ${price}`  
 }
